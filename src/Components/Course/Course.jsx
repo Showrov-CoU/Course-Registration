@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Course = (props) => {
   const { course } = props;
   return (
-    <div className="card bg-[#FFF] rounded-lg">
+    <div className="card w-72 mx-auto md:w-fit bg-[#FFF] rounded-lg">
       <figure className="p-3">
         <img src={course.image} alt="Shoes" />
       </figure>
