@@ -11,7 +11,7 @@
 1. User Interaction: Users can interact with my website by clicking buttons to select courses, and they can see the changes in the bookmark section in real-time.
 2. Responsive Design: Ensuring that your website is responsive so that it works well on different devices, such as desktops, tablets, and mobile phones.
 3. Dynamic Bookmarking: When a user clicks the "Select Button" on a course card, the following information is dynamically added to a bookmark section:
-
-- Sub Total Credit: The cumulative sum of the credit hours for all selected courses.
-- Sub Total Price: The cumulative sum of the prices for all selected courses.
-- Sub Course Title: The title of the selected course.
+- Total Credit Hour: The cumulative sum of the credit hours for all selected courses.
+- Credit Hour Remaining: Substract credit hour from highest credit 20.
+- Total Price: The cumulative sum of the prices for all selected courses.
+- Course Name: The title of the selected course.
