@@ -33,7 +33,6 @@ function App() {
       setCreditHours(totalCredit);
       setRemainingHours(totalRemainingCredit);
       setPrice(price);
-
       setSelectCourses([...selectCourses, course]);
     }
   };

@@ -1,8 +1,7 @@
-# React + Vite
+# Discuss how i managed the state in my project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. I used 4 state [selectCourses, creditHours, remainingHours, totalPrice] in my project
+2. First state "selectCourse" is updated when users click in select button.
+3. Using "selectCourse" state as a props drilling to (Courses->Course) then get course information from Course component(Child) to App component(parent) with help of handleSelectCourses function.
+4. Using this course information update 3 remaining state [creditHours, remainingHours, totalPrice]
+5. Remaining 3 states and "selectCourses" state are passes as a props of Bookmark component for dynamically update "Total Credit Hour", "Credit Hour Remaining", "Total Price" and create a course list dynamically in Course Name Section.
