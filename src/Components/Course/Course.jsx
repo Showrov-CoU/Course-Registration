@@ -19,7 +19,7 @@ const Course = (props) => {
           </div>
           <div className="flex items-center gap-2">
             <BsBook></BsBook>
-            <span>Credit : {course.credit}</span>
+            <span>Credit : {course.credit}hr</span>
           </div>
         </div>
         <div className="card-actions">
