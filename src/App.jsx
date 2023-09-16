@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -10,45 +10,32 @@ import Header from "./Components/Header/Header";
 function App() {
   const [selectCourses, setSelectCourses] = useState([]);
   const [creditHours, setCreditHours] = useState(0);
-  let [remainingHours, setRemainingHours] = useState(20);
+  const [remainingHours, setRemainingHours] = useState(0);
   const [totalPrice, setPrice] = useState(0);
 
-  useEffect(() => {
-    console.log(creditHours);
-    console.log(remainingHours);
-  }, [selectCourses, creditHours, remainingHours, totalPrice]);
-
   const handleSelectCourses = (course) => {
-    let newCourse = [...selectCourses];
+    const isExist = selectCourses.find((item) => item.id === course.id);
+    let totalCredit = parseInt(course.credit),
+      totalRemainingCredit = 20,
+      price = parseInt(course.price);
 
-    if (
-      !selectCourses.includes(course) &&
-      creditHours <= 20 &&
-      remainingHours >= 0
-    ) {
-      if (creditHours >= 20) {
-        toast("Your credit hours is over 20");
-      } else {
-        newCourse = [...selectCourses, course];
-
-        newCourse.forEach((course) => {
-          let hour = parseInt(course.credit);
-          let price = parseInt(course.price);
-
-          let totalCreditHour = creditHours + hour;
-          let totalRemainingHour = remainingHours - hour;
-
-          setCreditHours(totalCreditHour);
-          setRemainingHours(totalRemainingHour);
-          setPrice(totalPrice + price);
-        });
-      }
+    if (isExist) {
+      return toast("Already Selected");
     } else {
-      if (selectCourses.includes(course)) {
-        toast("Already Selected");
+      selectCourses.forEach((course) => {
+        totalCredit = totalCredit + parseInt(course.credit);
+        price = price + parseInt(course.price);
+      });
+      totalRemainingCredit -= totalCredit;
+      if (totalCredit > 20) {
+        return toast("Your credit hour is over 20");
       }
+      setCreditHours(totalCredit);
+      setRemainingHours(totalRemainingCredit);
+      setPrice(price);
+
+      setSelectCourses([...selectCourses, course]);
     }
-    setSelectCourses(newCourse);
   };
 
   return (
