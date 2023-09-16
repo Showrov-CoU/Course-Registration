@@ -3,7 +3,7 @@ import { BsBook } from "react-icons/bs";
 import PropTypes from "prop-types";
 
 const Course = (props) => {
-  const { course } = props;
+  const { course, handleSelectCourses } = props;
   return (
     <div className="card w-72 mx-auto md:w-fit bg-[#FFF] rounded-lg">
       <figure className="p-3">
@@ -23,7 +23,10 @@ const Course = (props) => {
           </div>
         </div>
         <div className="card-actions">
-          <button className="btn btn-sm bg-[#2F80ED] w-full text-[#FFF] capitalize font-semibold hover:bg-[#026bf5]">
+          <button
+            onClick={() => handleSelectCourses(course)}
+            className="btn btn-sm bg-[#2F80ED] w-full text-[#FFF] capitalize font-semibold hover:bg-[#026bf5]"
+          >
             Select
           </button>
         </div>
@@ -34,5 +37,6 @@ const Course = (props) => {
 
 Course.propTypes = {
   course: PropTypes.object.isRequired,
+  handleSelectCourses: PropTypes.func,
 };
 export default Course;
