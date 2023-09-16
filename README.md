@@ -12,6 +12,6 @@
 2. Responsive Design: Ensuring that your website is responsive so that it works well on different devices, such as desktops, tablets, and mobile phones.
 3. Dynamic Bookmarking: When a user clicks the "Select Button" on a course card, the following information is dynamically added to a bookmark section:
 
-  - Total Credit: The cumulative sum of the credit hours for all selected courses.
-  - Total Price: The cumulative sum of the prices for all selected courses.
-  - Course Title: The title of the selected course.
+- Sub Total Credit: The cumulative sum of the credit hours for all selected courses.
+- Sub Total Price: The cumulative sum of the prices for all selected courses.
+- Sub Course Title: The title of the selected course.
