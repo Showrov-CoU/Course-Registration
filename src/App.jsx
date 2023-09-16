@@ -21,19 +21,32 @@ function App() {
   const handleSelectCourses = (course) => {
     let newCourse = [...selectCourses];
 
-    if (!selectCourses.includes(course)) {
-      newCourse = [...selectCourses, course];
+    if (
+      !selectCourses.includes(course) &&
+      creditHours <= 20 &&
+      remainingHours >= 0
+    ) {
+      if (creditHours >= 20) {
+        toast("Your credit hours is over 20");
+      } else {
+        newCourse = [...selectCourses, course];
 
-      newCourse.forEach((course) => {
-        let hour = parseInt(course.credit);
-        let price = parseInt(course.price);
+        newCourse.forEach((course) => {
+          let hour = parseInt(course.credit);
+          let price = parseInt(course.price);
 
-        setCreditHours(creditHours + hour);
-        setRemainingHours(remainingHours - hour);
-        setPrice(totalPrice + price);
-      });
+          let totalCreditHour = creditHours + hour;
+          let totalRemainingHour = remainingHours - hour;
+
+          setCreditHours(totalCreditHour);
+          setRemainingHours(totalRemainingHour);
+          setPrice(totalPrice + price);
+        });
+      }
     } else {
-      toast("Already Selected");
+      if (selectCourses.includes(course)) {
+        toast("Already Selected");
+      }
     }
     setSelectCourses(newCourse);
   };
