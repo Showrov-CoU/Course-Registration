@@ -1,3 +1,7 @@
+## [Live Link](online-dev-course.surge.sh)
+
+Live link: [online-dev-course.surge.sh](online-dev-course.surge.sh)
+
 # Discuss how i managed the state in my project
 
 1. I used 4 state [selectCourses, creditHours, remainingHours, totalPrice] in my project
@@ -6,7 +10,7 @@
 4. Using this course information update 3 remaining state [creditHours, remainingHours, totalPrice]
 5. Remaining 3 states and "selectCourses" state are passes as a props of Bookmark component for dynamically update "Total Credit Hour", "Credit Hour Remaining", "Total Price" and create a course list dynamically in Course Name Section.
 
-# Add 3 Project features
+# 3 Project features
 
 1. User Interaction: Users can interact with my website by clicking buttons to select courses, and they can see the changes in the bookmark section in real-time.
 2. Responsive Design: Ensuring that your website is responsive so that it works well on different devices, such as desktops, tablets, and mobile phones.
