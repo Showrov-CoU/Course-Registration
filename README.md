@@ -1,6 +1,6 @@
-## [Live Link](online-dev-course.surge.sh)
+## [Live Link](https://online-dev-course.surge.sh/)
 
-Live link: [online-dev-course.surge.sh](online-dev-course.surge.sh)
+Live link: [https://online-dev-course.surge.sh/](https://online-dev-course.surge.sh/)
 
 # Discuss how i managed the state in my project
 
